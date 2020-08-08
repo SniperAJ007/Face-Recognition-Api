@@ -1,0 +1,16 @@
+createdb facerecognition;
+
+create table users (
+id serial PRIMARY KEY,
+name varchar(100),
+email text unique NOT NULL,
+entries BIGINT DEFAULT 0,
+joined TIMESTAMP NOT NULL
+);
+
+create table login (
+id serial PRIMARY KEY,
+hash varchar(100) NOT NULL,
+email text UNIQUE NOT NULL
+);
+
